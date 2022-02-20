@@ -1,0 +1,34 @@
+#   users Table  #
+--------------------------------------
+id - { primary key }
+name
+email
+mobile
+timestamp - (created_at, updated_at)
+=================================================================
+
+#  posts table  #
+---------------------------------------
+id - { primary key }
+user_id - { Foreign Key i.e. refer to the primary key of users table }
+description
+timestamp - (created_at, updated_at)
+=================================================================
+
+#  comments table  #
+---------------------------------------
+id - { primary key }
+post_id - { Foreign Key i.e. refer to the primary key of posts table }
+commenter_id - { Foreign Key i.e. refer to the primary key of users table }
+comment
+timestamp - (created_at, updated_at)
+=================================================================
+
+#  like_management table  #
+---------------------------------------
+id - { primary key }
+post_id - { Foreign Key i.e. refer to the primary key of posts table }
+comment_id - { Foreign Key i.e. refer to the primary key of comment table }
+user_id -  { Foreign Key i.e. refer to the primary key of users table }
+like - true/false
+timestamp - (created_at, updated_at)
